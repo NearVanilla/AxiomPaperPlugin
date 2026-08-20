@@ -101,7 +101,7 @@ public class SetBlockBufferOperation implements PendingOperation {
         }
 
         if (!this.getChunkFutures.isEmpty()) {
-            int maxChunkLoadDistance = AxiomPaper.PLUGIN.getMaxChunkLoadDistance(level.getWorld());
+            int maxChunkLoadDistance = AxiomPaper.PLUGIN.getMaxChunkLoadDistance();
             int playerSectionX = this.player.getBlockX() >> 4;
             int playerSectionZ = this.player.getBlockZ() >> 4;
 

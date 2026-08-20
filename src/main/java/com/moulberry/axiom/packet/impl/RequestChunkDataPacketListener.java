@@ -98,7 +98,7 @@ public class RequestChunkDataPacketListener implements PacketHandler {
         boolean shouldSendBlockEntities = this.plugin.hasPermission(bukkitPlayer, AxiomPermission.CHUNK_REQUESTBLOCKENTITY);
         boolean sendBlockEntitiesInChunks = friendlyByteBuf.readBoolean() && shouldSendBlockEntities;
 
-        int maxChunkLoadDistance = this.plugin.getMaxChunkLoadDistance(level.getWorld());
+        int maxChunkLoadDistance = this.plugin.getMaxChunkLoadDistance();
 
         if (!shouldSendBlockEntities && maxChunkLoadDistance <= 0) {
             sendEmptyResponse(player, id);

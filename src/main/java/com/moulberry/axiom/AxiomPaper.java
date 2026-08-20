@@ -371,15 +371,8 @@ public class AxiomPaper extends JavaPlugin implements Listener {
         commandSender.sendMessage(Component.text("Successfully migrated config.yml").color(NamedTextColor.GREEN));
     }
 
-    public int getMaxChunkLoadDistance(World world) {
-        int maxChunkLoadDistance = this.maxChunkLoadDistance;
-
-        // Don't allow loading chunks outside render distance for plot worlds
-        if (PlotSquaredIntegration.isPlotWorld(world)) {
-            maxChunkLoadDistance = 0;
-        }
-
-        return maxChunkLoadDistance;
+    public int getMaxChunkLoadDistance() {
+        return this.maxChunkLoadDistance;
     }
 
     private enum LargePayloadBehaviour {
